@@ -1,0 +1,97 @@
+//write code to display from 1 to 100 but just even numbers//
+
+for(i=2; i<=100; i=i+2){
+    console.log(i);
+}
+
+
+//Write code to display from 1 to 100 but just odd numbers//
+
+for(let i=1; i<100; i=i+2){
+    console.log(i);
+}
+
+
+//Write a function calculator which can add, subtract, multiply and divide two numbers,use switch statements//
+
+  
+function calculator(operation, num1, num2) {
+    switch (operation) {
+      case 'add':{}
+        return num1 + num2;
+        console.log(calculator('add', 5, 3));
+      case 'subtract':
+        return num1 - num2;
+      case 'multiply':
+        return num1 * num2;
+      case 'divide':
+        if (num2 !== 0) {
+          return num1 / num2;
+        } 
+    }
+  }
+  console.log(calculator('add', 5, 3));      
+  console.log(calculator('subtract', 10, 4)); 
+  console.log(calculator('multiply', 6, 2));   
+  console.log(calculator('divide', 8, 4));     
+  
+  
+
+/*Q3- You need to write a function findTax() that takes a number type variable as an argument which is the salary of a person. You need to calculate the tax amount on his salary by using the Js switch control flow. The tax rates are given below.
+if 500000 >= salary > 0 then 0% tax on the entire salary. If 1000000 >= salary > 500000 then 10% tax on the entire salary. If 1500000 >= salary > 1000000 then 20% tax on the entire salary. If the salary > 1500000 then 30% tax on the entire salary.*/
+
+function findTax(salary) {
+  let taxRate;
+  let taxAmount;
+
+  switch (true) {
+    case salary > 1500000:
+      taxRate = 0.3; // 30% tax rate
+      break;
+    case salary > 1000000:
+      taxRate = 0.2; // 20% tax rate
+      break;
+    case salary > 500000:
+      taxRate = 0.1; // 10% tax rate
+      break;
+    case salary > 0:
+      taxRate = 0; // 0% tax rate
+      break;
+    default:
+      return "Invalid salary"; // Handle invalid salary values
+  }
+
+  taxAmount = salary * taxRate;
+  return taxAmount;
+}
+
+
+const salary = 1200000; // Replace with the desired salary amount
+const tax = findTax(salary);
+console.log(`Tax on salary of $${salary} is $${tax}`);
+
+
+
+
+                                              //Assignment-2//
+
+//What is the output of this snippet of code?
+function foo() { 
+  x = 1; 
+  function x() { } var x = '2'; return x; }
+   alert( typeof foo() ); //Answer output "string"//
+
+
+
+
+   //Ans-2
+   function foo() { return x; x = 1;
+
+    function x() { }
+    
+    var x = '2';
+   } console.log( typeof foo() ); //Answer output function//
+
+
+   //Ans-3
+   var x = 1; function foo() { x = 10; return; function x() {} } foo(); console.log( x );//Answer output is 1.
