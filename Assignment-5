@@ -1,1 +1,185 @@
 https://jsfiddle.net/mohda95605/f3zwsavd/9/     Answer-1
+
+
+      ToDO List-> Answer-2
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>To-Do List</title>
+   <Style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  input[type="text"] {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    margin-right: 0.5rem;
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #3e8e41;
+  }
+  
+  li {
+    list-style: none;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.25rem;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  li span {
+    margin-right: 1rem;
+  }
+  
+  li button {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+  
+  li button:hover {
+    background-color: #da190b;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  input[type="text"] {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    margin-right: 0.5rem;
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #3e8e41;
+  }
+  
+  li {
+    list-style: none;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.25rem;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  li span {
+    margin-right: 1rem;
+  }
+  
+  li button {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+  
+  li button:hover {
+    background-color: #da190b;
+  }
+    
+
+
+</Style>
+  </head>
+  <body>
+    <header>
+      <h1>To-Do List</h1>
+      <input type="text" id="new-task" placeholder="Add new task" />
+      <button id="add-task">Add</button>
+    </header>
+    <ul id="task-list"></ul>
+    <script>
+const newTaskInput = document.getElementById("new-task");
+const addTaskButton = document.getElementById("add-task");
+const taskList = document.getElementById("task-list");
+
+addTaskButton.addEventListener("click", () => {
+  const taskText = newTaskInput.value;
+  if (taskText) {
+    const taskItem = document.createElement("li");
+    const taskTextSpan = document.createElement("span");
+    taskTextSpan.textContent = taskText;
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteButton.addEventListener("click", () => {
+      taskList.removeChild(taskItem);
+    });
+    taskItem.appendChild(taskTextSpan);
+    taskItem.appendChild(deleteButton);
+    taskList.appendChild(taskItem);
+    newTaskInput.value = "";
+  }
+});
+
+
+
+</script>
+  </body>
+</html>
+
