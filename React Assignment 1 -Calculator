@@ -1,0 +1,57 @@
+import React, { useState } from 'react';
+
+function Calculator() {
+  const [num1, setNum1] = useState(0);
+  const [num2, setNum2] = useState(0);
+  const [result, setResult] = useState(0);
+
+   //button 
+  const handleAddition = () => {
+    setResult(num1 + num2);
+  };
+
+  const handleSubtraction = () => {
+    setResult(num1 - num2);
+  };
+
+  const handleMultiplication = () => {
+    setResult(num1 * num2);
+  };
+
+  const handleDivision = () => {
+    setResult(num1 / num2);
+  };
+
+  //onchange 
+
+  const changeNum1 = (event) => {
+    setNum1(event.target.value);
+  };
+  const changeNum2 = (event) => {
+    setNum2(event.target.value);
+  };
+
+
+ return (
+    <div>
+      <input type="text" value={num1} onChange={changeNum1}/>
+      <br/>
+      <input type="text" value={num2} onChange={changeNum2}/>
+      <br />
+      <button onClick={handleAddition}>Addition</button>
+      <button onClick={handleSubtraction}>Subtration</button>
+      <button onClick={handleMultiplication}>Multiplication</button>
+      <button onClick={handleDivision}>Division</button>
+      <br />
+      <div>Result: {result}</div>
+    </div>
+  );
+}
+
+
+export default Calculator
+
+
+ 
+//There should be two input fields and four buttons for addition, subtration, multiplication and division. Also display the output in an another div.
+
